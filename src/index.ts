@@ -67,8 +67,9 @@ const run = async (discord: Discord.Client, channel: Discord.TextChannel, childP
               childProcess.kill('SIGINT')
               console.log('Failed to send message')
             }
+          } finally {
+            await new Promise<void>((resolve) => setTimeout(resolve, 1000))
           }
-          await new Promise<void>((resolve) => setTimeout(resolve, 1000))
         }
 
         if (toBreak) {
