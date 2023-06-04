@@ -112,6 +112,7 @@ const run = async (discord: Discord.Client, channel: Discord.TextChannel, childP
     }
 
     clearLastMessage()
+    console.log(`Discord command: '${message.content.trim()}'`)
     void sendCommand(message.content.trim())
   })
 
