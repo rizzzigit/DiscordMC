@@ -39,7 +39,7 @@ const run = async (discord: Discord.Client, channel: Discord.TextChannel, childP
       while (messageQueue.length !== 0) {
         let toBreak = false
         for (let message: string | undefined; (message = messageQueue.shift()) != null;) {
-          if ((lastContent.length + message.length) > 2000) {
+          if ((lastContent.length + message.length + '```text\n```'.length) > 2000) {
             toBreak = true
             break
           }
